@@ -1,0 +1,54 @@
+/* Apply dark mode styles conditionally */
+.darkMode .sidebar {
+  background-color: #333; 
+  color: #333;
+}
+
+.darkMode .sideBarDisplay input[type="text"],
+.darkMode .sideBarDisplay select {
+  border-color: #333; 
+}
+.darkMode .searchIcon {
+  color: #333;
+}
+
+.darkMode .searchIcon {
+  color: #333;
+}
+
+.productSidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.poductsSide {
+  flex-basis: 65%;
+}
+
+.productsSidebar {
+  flex-basis: 25%;
+}
+
+.sidebar {
+  width: 20rem;
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+  border-radius: 5%;
+  margin-top: 4rem;
+}
+
+.sideBarDisplay input[type="text"],
+.sideBarDisplay select {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 0.06rem solid #ccc;
+  border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 764px) {
+  .productSidebar {
+    flex-direction: column-reverse;
+  }
+}

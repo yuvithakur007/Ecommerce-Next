@@ -44,31 +44,28 @@ const Header = () => {
   };
 
   return (
-    <header className={state.darkMode ? styles.darkMode : styles.navbar}>
+    <header className={state.darkMode ? styles.darkMode : styles.lightMode}>
       <div className={styles.navbar}>
         <nav>
           <ul className={styles.navbarLinks}>
-            <li className={styles.navbarLinksItem}>
+            <li >
               <Link href="/">Home</Link>
             </li>
-            <li className={styles.navbarLinksItem}>
+            <li >
               <Link href="/cart">Cart</Link>
             </li>
-            <li className={styles.navbarLinksItem}>
+            <li >
               <Link href="/orders">Orders</Link>
             </li>
           </ul>
         </nav>
-
-        <div className="darkmode-button">
-          <div className="darkmode-toggle">
-            <button onClick={toggleDarkMode}>
+        
+            <button  className={styles.darkmodeButton} onClick={toggleDarkMode}>
               {state.darkMode ? 'Light Mode' : 'Dark Mode'} 
             </button>
-          </div>
-        </div>
+ 
 
-        <button className={styles.loginButton} onClick={() => setToggle(!toggle)}>
+        <button  className={styles.loginButton} onClick={() => setToggle(!toggle)}>
           {isLoggedIn ? (
             <>
               <div>{userData ? userData?.user?.email.split("@")[0] : null}</div>

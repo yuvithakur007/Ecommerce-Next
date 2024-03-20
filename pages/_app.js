@@ -8,16 +8,15 @@ export default function App({ Component, pageProps }) {
   const [category, setCategory] = useState('All');
   const [sort, setSort] = useState('None');
 
-  // Initialize darkMode state
+  
   const initialState = {
     darkMode: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Load darkMode state from localStorage if available
   useEffect(() => {
-    const savedDarkMode = window.localStorage.getItem('darkMode');
+    const savedDarkMode = localStorage.getItem('darkMode');
     if (savedDarkMode !== null) {
       dispatch({ type: 'TOGGLE_DARK_MODE', payload: savedDarkMode === 'true' });
     }
@@ -35,7 +34,6 @@ export default function App({ Component, pageProps }) {
     setSort(e.target.value);
   };
 
-  // Spread state variables and handler functions as props
   const componentProps = {
     ...pageProps,
     search,

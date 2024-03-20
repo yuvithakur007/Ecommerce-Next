@@ -1,69 +1,69 @@
-.orders-container {
+.ordersContainer {
   text-align: center;
   padding-top: 4rem;
   min-height: 100vh;
   height: 100%;
 }
 
-.order-products {
+.orderProducts {
   display: flex;
   justify-content: center;
   margin-top: 1.3rem;
 }
 
-.order-table {
+.orderTable {
   width: 60%;
   border-collapse: collapse;
   border: 0.05rem solid #ddd;
 }
 
-.order-table-header {
+.orderTableHeader {
   background-color: #f2f2f2;
   font-weight: bold;
   border-bottom: 0.01rem solid #ddd;
   height: 2rem;
 }
 
-.order-item {
+.orderItem {
   border-bottom: 1px solid #ddd;
 }
 
-.order-item:last-child {
+.orderItem:last-child {
   border-bottom: none;
 }
 
-.order-item td {
+.orderItem td {
   align-items: center;
   padding: 1.5rem 3.5rem 1.5rem 1.5rem;
 }
 
-.order-item td:first-child {
+.orderItem td:first-child {
   text-align: center;
 }
 
-.order-item td:last-child {
+.orderItem td:last-child {
   text-align: right;
 }
 
-.dark-mode .orders-container {
+.darkMode .ordersContainer {
   background-color: #333;
   color: #fff;
 }
 
-.dark-mode .order-table {
+.darkMode .orderTable {
   border-color: #666;
 }
 
-.dark-mode .order-table-header {
+.darkMode .orderTableHeader {
   background-color: #444;
   color: #fff;
   border: #333;
 }
 
-.dark-mode .order-item {
+.darkMode .orderItem {
   border-color: #666;
 }
 
-.dark-mode .order-item td {
+.darkMode .orderItem td {
   color: #fff;
 }

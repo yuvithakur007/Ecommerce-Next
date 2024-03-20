@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from '../styles/login.module.css'; // Import CSS module
+import styles from '../styles/login.module.css';
 import { useDarkMode } from '../context/DarkModeContext'; 
 
 const Login = () => {

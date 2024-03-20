@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import style from "../styles/cart.module.css"; // Import CSS module
-import { useDarkMode } from '../context/DarkModeContext'; // Import useDarkMode hook
-
+import style from "../styles/cart.module.css"; 
+import { useDarkMode } from '../context/DarkModeContext';
 const Cart = () => {
   const { state } = useDarkMode(); 
 
@@ -77,14 +76,14 @@ const Cart = () => {
   };
 
   return (
-    <div className={state.darkMode ? style.darkMode : style.lightMode}> {/* Use style object */}
-      <div className={style.cartContainer}> {/* Use style object */}
+    <div className={state.darkMode ? style.darkMode : style.lightMode}> 
+      <div className={style.cartContainer}> 
         <h1>Cart</h1>
         {cartProducts.length > 0 ? (
-          <div className={style.cartProducts}> {/* Use style object */}
-            <table className={style.cartTable}> {/* Use style object */}
+          <div className={style.cartProducts}>
+            <table className={style.cartTable}> 
               <thead>
-                <tr className={style.cartTableHeader}> {/* Use style object */}
+                <tr className={style.cartTableHeader}> 
                   <th>Name</th>
                   <th>Price</th>
                   <th>Action</th>
@@ -104,7 +103,7 @@ const Cart = () => {
 
                     <td>${item.price}</td>
                     <td>
-                      <button onClick={() => handleDeleteItem(item._id)}>
+                      <button className={style.cartButton} onClick={() => handleDeleteItem(item._id)}>
                         Delete
                       </button>
                     </td>
@@ -112,7 +111,7 @@ const Cart = () => {
                 ))}
               </tbody>
             </table>
-            <div className={style.totalAmount}> {/* Use style object */}
+            <div className={style.totalAmount}> 
               <p>
                 Total: $
                 {cartProducts.reduce(
@@ -121,12 +120,12 @@ const Cart = () => {
                 )}
               </p>
             </div>
-            <button onClick={handlePlaceOrder}>Place Order</button>
+            <button className={style.cartButton} onClick={handlePlaceOrder}>Place Order</button>
           </div>
         ) : (
           <div>
                <p style={{ margin: "1.5rem" }}>No products in the cart.</p>
-          <p>Loading...</p>
+     
           </div>
         )}
       </div>

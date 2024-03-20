@@ -1,16 +1,13 @@
-// ProductDetails.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from 'next/router';
-// import { useParams } from "react-router-dom";
-import styles from "../styles/products.module.css";
+import styles from "../styles/details.module.css";
 import { useDarkMode } from "../context/DarkModeContext";
-import Header from "./Header"; // Import Header component
 
 const ProductDetails = () => {
-  // const { id } = useParams();
   const router = useRouter();
   const { id } = router.query;
+  
   const [product, setProduct] = useState(null);
   const { state } = useDarkMode();
 
@@ -53,7 +50,7 @@ const ProductDetails = () => {
 
   return (
     <div className={state.darkMode ? styles.darkMode : styles.lightMode}>
-      <Header /> {/* Include Header component */}
+  
       <div className={styles.productDetailsContainer}>
         {product && (
           <div className={styles.productDetails}>
@@ -69,7 +66,7 @@ const ProductDetails = () => {
               </div>
               <p className={styles.productDetailsPrice}>Price: ${product.price}</p>
               <div className={styles.productDetailsActions}>
-                <button onClick={handleClick}>
+                <button className={styles.addCart} onClick={handleClick}>
                   Add to cart
                 </button>
               </div>

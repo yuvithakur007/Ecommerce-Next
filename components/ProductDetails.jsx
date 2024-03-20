@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useRouter } from 'next/router';
+// import axios from "axios";
+// import { useRouter } from 'next/router';
 import styles from "../styles/details.module.css";
 import { useDarkMode } from "../context/DarkModeContext";
 
-const ProductDetails = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const ProductDetails = ({ product }) => {
+  // const router = useRouter();
+  // const { id } = router.query;
   
-  const [product, setProduct] = useState(null);
+  // const [product, setProduct] = useState(null);
   const { state } = useDarkMode();
 
-  useEffect(() => {
-    console.log("Product ID:", id);
-    if (id) {
-      fetchProduct(id);
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   console.log("Product ID:", id);
+  //   if (id) {
+  //     fetchProduct(id);
+  //   }
+  // }, [id]);
 
-  const fetchProduct = async (id) => {
-    try {
-      const response = await axios.get(
-        `https://ecommerce-knol.onrender.com/api/products/${id}`
-      );
-      setProduct(response.data);
-    } catch (error) {
-      console.error("Error fetching product:", error);
-    }
-  };
+  // const fetchProduct = async (id) => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://ecommerce-knol.onrender.com/api/products/${id}`
+  //     );
+  //     setProduct(response.data);
+  //   } catch (error) {
+  //     console.error("Error fetching product:", error);
+  //   }
+  // };
 
   const handleClick = async (e) => {
     e.preventDefault();

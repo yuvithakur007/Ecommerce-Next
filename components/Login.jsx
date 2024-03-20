@@ -23,7 +23,8 @@ const Login = () => {
         window.location.href = '/';
       }
     } catch (error) {
-      console.error('Error logging in:', error);
+      // console.error('Error logging in:', error);
+      alert('Invalid email or password');
     }
   };
 

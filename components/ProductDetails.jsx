@@ -29,20 +29,32 @@ const ProductDetails = () => {
     }
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-
+  
     if (localStorage.getItem('token')) {
-      fetch("https://ecommerce-knol.onrender.com/api/carts/additem", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
-        },
-        body: JSON.stringify({ id: product._id }),
-      });
+      try {
+        const response = await fetch("https://ecommerce-knol.onrender.com/api/carts/additem", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+          body: JSON.stringify({ id: product._id }),
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+          alert(data.message);
+        } else {
+          throw new Error('Failed to add item to cart');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('An error occurred while adding item to cart');
+      }
     } else {
-      if (window.confirm('"Please Login to add to cart"')) {
+      if (window.confirm("Please Login to add to cart")) {
         window.location.href = '/login';
       }
     }

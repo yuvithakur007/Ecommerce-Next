@@ -51,29 +51,45 @@ const Cart = () => {
   const handleDeleteItem = async (itemId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://ecommerce-knol.onrender.com/api/carts/delete/${itemId}`, {
+      const response = await axios.delete(`https://ecommerce-knol.onrender.com/api/carts/delete/${itemId}`, {
         headers: {
           Authorization: token,
         },
       });
+  
+      if (response.status === 200) {
+        const data = response.data;
+        alert(data.message); 
+        console.log("Item deleted successfully");
+      } else {
+        throw new Error('Failed to delete item from cart');
+      }
     } catch (error) {
       console.error("Error deleting item from cart:", error);
     }
   };
-
+  
   const handlePlaceOrder = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.post(`https://ecommerce-knol.onrender.com/api/orders/place-order`, null, {
+      const response = await axios.post(`https://ecommerce-knol.onrender.com/api/orders/place-order`, null, {
         headers: {
           Authorization: token,
         },
       });
-      console.log("Order placed successfully");
+  
+      if (response.status === 200) {
+        const data = response.data;
+        alert(data.message); 
+        console.log("Order placed successfully");
+      } else {
+        throw new Error('Failed to place order');
+      }
     } catch (error) {
       console.error("Error placing order:", error);
     }
   };
+  
 
   return (
     <div className={state.darkMode ? style.darkMode : style.lightMode}> 

@@ -1,5 +1,6 @@
 .productListContainer {
   z-index: 0;
+  background-color: #fff; 
 }
 
 .darkMode .productListContainer {
@@ -13,8 +14,8 @@
   justify-content: space-around;
   row-gap: 3rem;
   margin-top: 4rem;
-  /* margin-bottom: 3rem;
-  min-height: 100vh; */
+  margin-bottom: 3rem;
+  min-height: 100vh;
   align-items: flex-start;
 }
 
@@ -26,6 +27,7 @@
   overflow: hidden;
   background-color: #fff; 
   transition: transform 0.2s ease;
+  max-height:55vh;
 }
 
 .darkMode .individualProductBox {
@@ -107,6 +109,7 @@
 @media screen and (max-width: 634px) {
   .individualProductBox {
     flex-basis: 40%;
+    /* max-height:50vh; */
   }
 }
 
